@@ -1,0 +1,79 @@
+<div>
+    <section class="h-100" style="background-color: #bad8ed;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card  text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-center">
+                                        <img src="https://www.topdata.com.br/media/logo-Topdata.webp"
+                                            style="width: 190px;" class="rounded-0" alt="logo ">
+                                        <div class="text-center py-3">
+                                            <h6 class="mt-1 mb-5 pb-1">Entre com
+                                                <a href="https://wwww.facebook.com" target="_blank" class="px-2"> <img
+                                                        src="https://www.dpreview.com/files/p/articles/4698742202/facebook.jpeg"
+                                                        alt="">
+                                                </a>
+                                                <a href="https://www.linkedin.com" target="_blank" class="px-2"> <img
+                                                        src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                                        alt=""> </a>
+                                                <a href="https://www.github.com" target="_blank" class="p-1"> <img
+                                                        src="https://www.freepnglogos.com/uploads/512x512-logo-png/512x512-logo-github-icon-35.png"
+                                                        alt=""> </a>
+                                            </h6>
+                                            <div class="mx-3 my-2 py-2 bordert"> </div>
+                                        </div>
+                                    </div>
+                                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                        <div class="form-group pt-3">
+                                            <div class="input-field"
+                                                [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                                                <span class="fa fa-user p-2"></span> <input formControlName="username"
+                                                    type="text" placeholder="Nome" required>
+                                            </div>
+                                        </div>
+                                        <small
+                                            *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"
+                                            class="text-danger"> Campo Obrigatório</small>
+                                        <div class="form-group pt-3">
+                                            <div class="input-field"
+                                                [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                                <span class="fa fa-lock p-2"></span> <input formControlName="password"
+                                                    [type]="type" placeholder="Senha"> <button type="button"
+                                                    (click)="hideShowPass()" class="bg-white text-muted"> <span
+                                                        class="fa {{eyeIcon}}"></span> </button>
+                                            </div>
+                                        </div>
+                                        <small
+                                            *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
+                                            class="text-danger">Informe uma senha</small>
+                                        <div class="form-inline fr mt-4"> <a id="forgot" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal" class="font-weight-bold">Esqueci minha
+                                                Senha</a>
+                                        </div>
+                                        <button type="submit"
+                                            class="btn btn-primary btn-block mt-4 w-100">Entre</button>
+                                        <div class="text-center pt-4 text-muted">Você não tem uma conta? <a id="forgot"
+                                                href="#" routerLink="/signup">Crie uma!</a> </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="">
+                                    <img src="https://www.topdata.com.br/media/relogios-de-ponto.webp"
+                                        class="img-fluid rounded-0" style="width: 1000px;">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

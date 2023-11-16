@@ -1,0 +1,85 @@
+<div>
+    <section class="h-100" style="background-color: #bad8ed;">
+        <div class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Título do modal</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Texto do corpo do modal, é aqui.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-primary">Salvar mudanças</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card  text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+                                    <div class="text-center">
+                                        <img src="https://www.topdata.com.br/media/logo-Topdata.webp"
+                                            style="width: 190px;" class="rounded-0" alt="logo ">
+                                        <div class="text-center py-3">
+                                            <h6 class="mt-1 mb-5 pb-1">Criar uma Conta no TopData</h6> </div>
+                                    </div>
+                                    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                                        <div class="form-group pt-3">
+                                            <div class="input-field" [class.error]="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')"> <span class="fa fa-user p-2"></span> <input formControlName="firstName" type="text" placeholder="Nome"> </div>
+                                        </div>
+                                        <small *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')" class="text-danger">Campo Obrigatório</small>
+                                        <div class="form-group pt-3">
+                                            <div class="input-field" [class.error]="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required','lastName')"> <span class="fa fa-user p-2"></span> <input formControlName="lastName" type="text" placeholder="Sobrenome"> </div>
+                                        </div>
+                                        <small *ngIf="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required','lastName')" class="text-danger">Campo Obrigatório</small>
+                                        <div class="form-group pt-3">
+                                            <div class="input-field" [class.error]="signUpForm.controls['userName'].dirty && signUpForm.hasError('required','userName')"> <span class="fa fa-user p-2"></span> <input formControlName="userName" type="text" placeholder="Apelido"> </div>
+                                        </div>
+                                        <small *ngIf="signUpForm.controls['userName'].dirty && signUpForm.hasError('required','userName')" class="text-danger">Campo Obrigatório</small>
+                                        <div class="form-group pt-3">
+                                            <div class="input-field" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')"> <span class="fa fa-user p-2"></span> <input formControlName="email" type="text" placeholder="E-mail"> </div>
+                                        </div>
+                                        <small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required','email')" class="text-danger">Informe um E-mail</small>
+                                        <div class="form-group pt-3">
+                                            <div class="input-field" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')"> <span class="fa fa-lock p-2"></span> <input formControlName="password" [type]="type" placeholder="Senha"> <button (click)="hideShowPass()" type="button" class="bg-white text-muted"> <span class="fa {{eyeIcon}}"></span> </button>                                    </div>
+                                        </div>
+                                        <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required','password')" class="text-danger">Informe uma senha</small>
+              
+                                        <button type="submit" class="btn btn-primary btn-block mt-4 w-100">Criar</button>
+                                        
+                                        <div *ngIf="loading" class="d-flex justify-content-center">
+                                         <div class="spinner-border text-info" role="status"*ngIf="loading">
+                                                <span class="visually-hidden"*ngIf="loading">Loading...</span>
+                                         </div>
+                                        </div>
+                                        <div class="text-center pt-4 text-muted">Já tem uma conta? <a id="forgot" routerLink="/login" href="#">Entre</a> </div>
+                                    </form>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <div class="">
+                                    <img src="https://www.topdata.com.br/media/relogios-de-ponto.webp"
+                                        class="img-fluid rounded-0" style="width: 1000px;">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
